@@ -36,8 +36,7 @@ resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnet_cidrs[count.index] # 2
   availability_zone = local.az_names[count.index]
-  # map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip...
-
+  
   tags = merge(
     local.common_tags,
     # roboshop-dev-private_us-east-1a, roboshop-dev-private_us-east-1b
@@ -54,7 +53,6 @@ resource "aws_subnet" "database" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.database_subnet_cidrs[count.index] # 2
   availability_zone = local.az_names[count.index]
-  # map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip...
 
   tags = merge(
     local.common_tags,
