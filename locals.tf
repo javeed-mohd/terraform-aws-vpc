@@ -1,3 +1,4 @@
+# To get aws_availability_zones by default, we use the aws_availability_zones data source
 locals {
     common_tags = {
         Project     = var.project
@@ -20,6 +21,6 @@ locals {
         },
         var.igw_tags
     )
-
+    
     az_names    = slice(data.aws_availability_zones.available.names, 0, 2) # We get 0,1 as end results
 }
