@@ -26,7 +26,7 @@ resource "aws_subnet" "public" {
     {
       Name  = "${var.project}-${var.environment}-public-${local.az_names[count.index]}"
     },
-    var.public_subnet_tags
+    var.public_subnet_tags # For users
   )
 }
 
@@ -44,7 +44,7 @@ resource "aws_subnet" "private" {
     {
       Name  = "${var.project}-${var.environment}-private-${local.az_names[count.index]}"
     },
-    var.private_subnet_tags
+    var.private_subnet_tags # For users
   )
 }
 
@@ -62,14 +62,48 @@ resource "aws_subnet" "database" {
     {
       Name  = "${var.project}-${var.environment}-database-${local.az_names[count.index]}"
     },
-    var.database_subnet_tags
+    var.database_subnet_tags # For users
   )
 }
 
+# Public Route Table
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
-  tags = {
-    Name = "example"
-  }
+  tags = merge(
+    local.common_tags,
+    # roboshop-dev-public
+    {
+      Name  = "${var.project}-${var.environment}-public"
+    },
+    var.public_route_table_tags # For users
+  )
+}
+
+# Private Route Table
+resource "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.common_tags,
+    # roboshop-dev-private
+    {
+      Name  = "${var.project}-${var.environment}-private"
+    },
+    var.private_route_table_tags # For users
+  )
+}
+
+# Database Route Table
+resource "aws_route_table" "database" {
+  vpc_id = aws_vpc.main.id
+
+  tags = merge(
+    local.common_tags,
+    # roboshop-dev-database
+    {
+      Name  = "${var.project}-${var.environment}-database"
+    },
+    var.database_route_table_tags # For users
+  )
 }
