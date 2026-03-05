@@ -18,7 +18,7 @@ resource "aws_subnet" "public" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.public_subnet_cidrs[count.index] # 2
   availability_zone = local.az_names[count.index]
-  map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip...
+  map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip).
 
   tags = merge(
     local.common_tags,
@@ -32,11 +32,11 @@ resource "aws_subnet" "public" {
 
 # Private Subnets
 resource "aws_subnet" "private" {
-  count             = length(var.private_subnet_cidrs)  # 2 public_subnet_cidrs
+  count             = length(var.private_subnet_cidrs)  # 2 private_subnet_cidrs
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnet_cidrs[count.index] # 2
   availability_zone = local.az_names[count.index]
-  # map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip...
+  # map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip).
 
   tags = merge(
     local.common_tags,
@@ -50,11 +50,11 @@ resource "aws_subnet" "private" {
 
 # Database Subnets
 resource "aws_subnet" "database" {
-  count             = length(var.database_subnet_cidrs) # 2 public_subnet_cidrs
+  count             = length(var.database_subnet_cidrs) # 2 database_subnet_cidrs
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.database_subnet_cidrs[count.index] # 2
   availability_zone = local.az_names[count.index]
-  # map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip...
+  # map_public_ip_on_launch = true # By default it is false, to enable we use true orelse we won't mention(To enable public ip).
 
   tags = merge(
     local.common_tags,
@@ -64,4 +64,12 @@ resource "aws_subnet" "database" {
     },
     var.database_subnet_tags
   )
+}
+
+resource "aws_route_table" "public" {
+  vpc_id = aws_vpc.main.id
+
+  tags = {
+    Name = "example"
+  }
 }
