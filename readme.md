@@ -45,6 +45,7 @@ aws_route.database	resource
 aws_route_table_association.public	resource
 aws_route_table_association.private	resource
 aws_route_table_association.database	resource
+|------------------------------|----------------|
 Inputs
 Name	Description	Type	Default	Required
 project	Project name used for naming and tagging resources	string	n/a	yes
