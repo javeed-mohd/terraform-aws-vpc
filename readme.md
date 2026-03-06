@@ -3,6 +3,7 @@
 A Terraform module for provisioning a production-ready AWS VPC with public, private, and database subnet tiers, Internet Gateway, NAT Gateway, and Route Tables.
 
 # Usage
+
 module "vpc" {
   source = "git::https://github.com/javeed-mohd/terraform-aws-vpc.git?ref=main"
 
