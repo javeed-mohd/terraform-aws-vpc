@@ -93,3 +93,10 @@ Outputs should be defined in outputs.tf. Common outputs from this module include
 | public_route_table_id | ID of the Public Route Table |
 | private_route_table_id | ID of the Private Route Table |
 | database_route_table_id | ID of the Database Route Table |
+
+## Subnet Naming Convention
+
+Resources are named following this pattern:
+```
+{project}-{environment}-{tier}-{availability-zone}
+```
