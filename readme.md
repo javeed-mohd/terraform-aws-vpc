@@ -100,3 +100,11 @@ Resources are named following this pattern:
 ```
 {project}-{environment}-{tier}-{availability-zone}
 ```
+
+# Example:
+
+```
+roboshop-dev-public-us-east-1a
+roboshop-dev-private-us-east-1a
+roboshop-dev-database-us-east-1a
+```
