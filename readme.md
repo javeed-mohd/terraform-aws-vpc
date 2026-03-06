@@ -1,8 +1,8 @@
-# Terraform AWS VPC Module
+## Terraform AWS VPC Module
 
 A Terraform module for provisioning a production-ready AWS VPC with public, private, and database subnet tiers, Internet Gateway, NAT Gateway, and Route Tables.
 
-# Usage
+## Usage
 
 ```hcl
 module "vpc" {
@@ -22,11 +22,12 @@ module "vpc" {
 ```
 
 
-# Features
-VPC with configurable CIDR block and DNS hostname support
-Public, private, and database subnet tiers across multiple Availability Zones
-Internet Gateway for public subnets
-NAT Gateway (with Elastic IP) for private and database subnet outbound access
-Separate route tables for each subnet tier
-Optional VPC peering support flag
-Fully customizable tags on every resource
+## Features
+
+* VPC with configurable CIDR block and DNS hostname support.
+* Public, Private, and Database subnet tiers across multiple Availability Zones.
+* Internet Gateway for public subnets.
+* NAT Gateway (with Elastic IP) for private and database subnet outbound access.
+* Separate route tables for each subnet tier.
+* Optional VPC peering support flag.
+* Fully customizable tags on every resource.*
