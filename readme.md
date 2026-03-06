@@ -26,8 +26,9 @@ Separate route tables for each subnet tier
 Optional VPC peering support flag
 Fully customizable tags on every resource
 
-# Resources
-# Name	| Type
+## Resources
+| Name  | Type  |
+|-------|-------|
 aws_vpc.main |	resource
 aws_internet_gateway.main	resource
 aws_subnet.public	resource
