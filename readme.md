@@ -57,8 +57,8 @@ module "vpc" {
 
 | Name                       | Description | Type        | Default | Required |
 |----------------------------|-------------|------------|----------|----------|
-| project | Project name used for naming and tagging resources | string | n/a | yes |
-| environment | Deployment environment. Must be one of: dev, qa, uat, prod | string | n/a | yes |
+| project | Project name used for naming and tagging resources | string | N/A | yes |
+| environment | Deployment environment. Must be one of: dev, qa, uat, prod | string | N/A | yes |
 | vpc_cidr | CIDR block for the VPC | string | "10.0.0.0/16" | no |
 | public_subnet_cidrs | List of CIDR blocks for public subnets. One subnet is created per AZ. | list(string) | ["10.0.1.0/24", "10.0.2.0/24"] | no |
 | private_subnet_cidrs | List of CIDR blocks for private subnets. One subnet is created per AZ. | list(string) | ["10.0.11.0/24", "10.0.12.0/24"] | no |
