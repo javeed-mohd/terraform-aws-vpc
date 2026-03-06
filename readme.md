@@ -111,4 +111,4 @@ roboshop-dev-database-us-east-1a
 
 # Architecture
 
-![Alt Text](VPC-module.jpg)
+![Alt Text](vpc-module.jpg)
