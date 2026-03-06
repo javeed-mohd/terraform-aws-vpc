@@ -4,6 +4,7 @@ A Terraform module for provisioning a production-ready AWS VPC with public, priv
 
 # Usage
 
+```
 module "vpc" {
   source = "git::https://github.com/javeed-mohd/terraform-aws-vpc.git?ref=main"
 
@@ -18,6 +19,7 @@ module "vpc" {
 
   is_peering_required = false
 }
+```
 
 
 # Features
