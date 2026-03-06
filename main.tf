@@ -132,7 +132,7 @@ resource "aws_eip" "nat" {
 # To create NAT Gateway, we need Elastic IP which is a static IP which does not change after start/stop of the instance...
 resource "aws_nat_gateway" "main" {
   allocation_id = aws_eip.nat.id
-  subnet_id     = aws_subnet.public[0].id # We are creating this in us-east-1a AZ (public[1] -> us-east-1b)
+  subnet_id     = aws_subnet.public[0].id # We are creating this in us-east-1a AZ i.e., public[0] (public[1] -> us-east-1b)
 
   tags = merge(
     local.common_tags,

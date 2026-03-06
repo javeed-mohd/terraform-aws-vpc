@@ -1,4 +1,3 @@
-# To get aws_availability_zones by default, we use the aws_availability_zones data source
 locals {
     common_tags = {
         Project     = var.project
