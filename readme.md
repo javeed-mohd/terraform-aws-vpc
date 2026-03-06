@@ -4,7 +4,7 @@ A Terraform module for provisioning a production-ready AWS VPC with public, priv
 
 # Usage
 
-```
+```hcl
 module "vpc" {
   source = "git::https://github.com/javeed-mohd/terraform-aws-vpc.git?ref=main"
 
