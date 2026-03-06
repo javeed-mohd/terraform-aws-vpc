@@ -108,3 +108,7 @@ roboshop-dev-public-us-east-1a
 roboshop-dev-private-us-east-1a
 roboshop-dev-database-us-east-1a
 ```
+
+# Architecture
+
+![Alt Text](Downloads/VPC-module.jpg)
