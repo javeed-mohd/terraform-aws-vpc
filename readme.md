@@ -30,4 +30,4 @@ module "vpc" {
 * NAT Gateway (with Elastic IP) for private and database subnet outbound access.
 * Separate route tables for each subnet tier.
 * Optional VPC peering support flag.
-* Fully customizable tags on every resource.*
+* Fully customizable tags on every resource.
