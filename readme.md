@@ -97,6 +97,6 @@ Outputs should be defined in outputs.tf. Common outputs from this module include
 ## Subnet Naming Convention
 
 Resources are named following this pattern:
-```
+```hcl
 {project}-{environment}-{tier}-{availability-zone}
 ```
