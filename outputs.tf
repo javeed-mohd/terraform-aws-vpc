@@ -20,21 +20,21 @@ output "vpc_cidr" {
 output "public_subnet_ids" {
   value       = aws_subnet.public[*].id
   # value       = [for subnet in aws_subnet.public : subnet.id]
-  description = "List of ID's of the Public Subnets."
+  description = "List of the Public Subnets IDs."
 }
 
 # Private Subnet
 output "private_subnet_ids" {
   value       = aws_subnet.private[*].id
   # value       = [for subnet in aws_subnet.private : subnet.id]
-  description = "List of ID's of the Private Subnets."
+  description = "List of the Private Subnets IDs."
 }
 
 # Database Subnet
 output "database_subnet_ids" {
   value       = aws_subnet.database[*].id
   # value       = [for subnet in aws_subnet.database : subnet.id]
-  description = "List of ID's of the Database Subnets."    
+  description = "List of the Database Subnets IDs."    
 }
 
 # Internet Gateway

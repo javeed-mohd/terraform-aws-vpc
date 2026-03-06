@@ -57,8 +57,8 @@ module "vpc" {
 
 | Name                       | Description | Type        | Default | Required |
 |----------------------------|-------------|------------|----------|----------|
-| project | Project name used for naming and tagging resources | string | N/A | yes |
-| environment | Deployment environment. Must be one of: dev, qa, uat, prod | string | N/A | yes |
+| project | (Required) Project name used for naming and tagging resources | string | N/A | yes |
+| environment | (Required) Deployment environment. Must be one of: dev, qa, uat, prod | string | N/A | yes |
 | vpc_cidr | CIDR block for the VPC | string | "10.0.0.0/16" | no |
 | public_subnet_cidrs | List of CIDR blocks for public subnets. One subnet is created per AZ. | list(string) | ["10.0.1.0/24", "10.0.2.0/24"] | no |
 | private_subnet_cidrs | List of CIDR blocks for private subnets. One subnet is created per AZ. | list(string) | ["10.0.11.0/24", "10.0.12.0/24"] | no |
@@ -74,3 +74,22 @@ module "vpc" {
 | eip_tags | Additional tags to merge on the Elastic IP | map(string) | {} | no |
 | nat_gateway_tags | Additional tags to merge on the NAT Gateway | map(string) | {} | no |
 | is_peering_required | Whether VPC peering is required. Enables peering-related resources when set to true. | bool | false | no |
+
+## Outputs
+
+Outputs should be defined in outputs.tf. Common outputs from this module include:
+
+| Name | Description |
+|------|-------------|
+| azs_info | List of available AWS Availability Zones in the current region |
+| vpc_id | ID of the VPC created |
+| vpc_cidr | CIDR block of the VPC created |
+| public_subnet_ids | List of the Public Subnets IDs |
+| private_subnet_ids | List of the Private Subnets IDs |
+| database_subnet_ids | List of the Database Subnets IDs |
+| igw_id | ID of the Internet Gateway |
+| nat_gateway_id | ID of the NAT Gateway |
+| nat_eip_id | Elastic IP ID associated with the NAT Gateway |
+| public_route_table_id | ID of the Public Route Table |
+| private_route_table_id | ID of the Private Route Table |
+| database_route_table_id | ID of the Database Route Table |
