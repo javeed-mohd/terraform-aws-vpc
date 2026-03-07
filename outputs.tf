@@ -5,6 +5,7 @@ output "azs_info" {
 }
 
 # VPC ID 
+# This is for 00-vpc in roboshop-infra-dev
 output "vpc_id" {
   value       = aws_vpc.main.id
   description = "ID of the VPC created."
