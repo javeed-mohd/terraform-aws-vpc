@@ -1,3 +1,4 @@
+# data-source
 # To get aws_availability_zones by default, we use the aws_availability_zones data source
 data "aws_availability_zones" "available" {
   state  = "available"
