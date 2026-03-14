@@ -1,4 +1,4 @@
-# data-source
+# Data sources are used to query and fetch existing information from your provider like AWS, so you can use that data in your Terraform configuration.
 # To get aws_availability_zones by default, we use the aws_availability_zones data source
 data "aws_availability_zones" "available" {
   state  = "available"
